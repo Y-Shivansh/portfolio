@@ -18,7 +18,7 @@ const Home = () => {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Resume.pdf';
+    link.href = '/Shivansh_Sharma_Resume.pdf';
     link.download = 'Shivansh_Sharma_Resume.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
