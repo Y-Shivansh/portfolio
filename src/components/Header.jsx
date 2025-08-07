@@ -33,7 +33,7 @@ const Header = () => {
       <div className="container">
         <div className="header-content">
           <a href="#" className="logo">
-            <h1>Shivansh Sharma</h1>
+            <h1 className=''>Shivansh Sharma</h1>
           </a>
 
           <button 

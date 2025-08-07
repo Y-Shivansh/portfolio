@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="container">
         <div className="">
           <div className="footer-info flex justify-between items-center">
-            <div className='flex gap-3 items-center items-start'>
-              <img className='object-cover rounded-full w-20' src="../../public/favicon.png" alt="" />
+            <div className='flex gap-3 items-start'>
+              <img className='object-cover rounded-full w-20' src="./favicon.png" alt="" />
               <div className=' flex flex-col text-start'>
                 <h3>Shivansh Sharma</h3>
                 <p>Full Stack Developer</p>

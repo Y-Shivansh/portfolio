@@ -1,5 +1,3 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { FaArrowDown, FaDownload } from 'react-icons/fa';
 import { ReactTyped } from 'react-typed';
 import TechStack from '../components/TechStack';
@@ -11,7 +9,6 @@ import Certificates from './Certificates';
 import About from './About';
 
 const Home = () => {
-  const navigate = useNavigate();
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaPaperPlane } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,16 +16,40 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      // EmailJS configuration
+      const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      // Send email using EmailJS
+      await emailjs.send(
+        serviceID,
+        templateID,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        publicKey
+      );
+
       setSubmitStatus('success');
-      setIsSubmitting(false);
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Clear success message after 3 seconds
-      setTimeout(() => setSubmitStatus(null), 3000);
-    }, 1000);
+
+      // Clear success message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus('error');
+
+      // Clear error message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -57,7 +82,7 @@ const Contact = () => {
                 </div>
 
                 <a href='mailto:sharma.shivansh1305@gmail.com'
-                className="contact-info-item" data-aos="fade-up" data-aos-delay="200">
+                  className="contact-info-item" data-aos="fade-up" data-aos-delay="200">
                   <div className="contact-icon">
                     <FaEnvelope />
                   </div>
@@ -68,7 +93,7 @@ const Contact = () => {
                 </a>
 
                 <a href='tel:6398799630'
-                 className="contact-info-item" data-aos="fade-up" data-aos-delay="300">
+                  className="contact-info-item" data-aos="fade-up" data-aos-delay="300">
                   <div className="contact-icon">
                     <FaPhone />
                   </div>
@@ -86,10 +111,10 @@ const Contact = () => {
                     <h4>Social Profiles</h4>
                     <div className="social-links ">
                       <a href="https://linkedin.com/in/shivansh-sharma-73270724b" target="_blank" rel="noopener noreferrer" className="linkedin">
-                        <FaLinkedin size={30}/>
+                        <FaLinkedin size={30} />
                       </a>
                       <a href="https://github.com/Y-Shivansh" target="_blank" rel="noopener noreferrer" className="github">
-                        <FaGithub size={30}/>
+                        <FaGithub size={30} />
                       </a>
                     </div>
                   </div>
@@ -98,7 +123,7 @@ const Contact = () => {
 
               <div className="contact-form-container" data-aos="fade-up" data-aos-delay="500">
                 <h3>Send Message</h3>
-                
+
                 {submitStatus === 'success' && (
                   <div className="alert alert-success">
                     <i className="bi bi-check-circle"></i>
@@ -106,60 +131,67 @@ const Contact = () => {
                   </div>
                 )}
 
+                {submitStatus === 'error' && (
+                  <div className="alert alert-error">
+                    <i className="bi bi-exclamation-triangle"></i>
+                    Failed to send message. Please try again or contact me directly via email.
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="contact-form">
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
-                        <input 
-                          type="text" 
-                          name="name" 
-                          className="form-control" 
-                          placeholder="Your Name" 
+                        <input
+                          type="text"
+                          name="name"
+                          className="form-control"
+                          placeholder="Your Name"
                           value={formData.name}
                           onChange={handleChange}
-                          required 
+                          required
                         />
                       </div>
                     </div>
                     <div className="col-md-6">
                       <div className="form-group">
-                        <input 
-                          type="email" 
-                          className="form-control" 
-                          name="email" 
-                          placeholder="Your Email" 
+                        <input
+                          type="email"
+                          className="form-control"
+                          name="email"
+                          placeholder="Your Email"
                           value={formData.email}
                           onChange={handleChange}
-                          required 
+                          required
                         />
                       </div>
                     </div>
                   </div>
                   <div className="form-group">
-                    <input 
-                      type="text" 
-                      className="form-control" 
-                      name="subject" 
-                      placeholder="Subject" 
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="subject"
+                      placeholder="Subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      required 
+                      required
                     />
                   </div>
                   <div className="form-group">
-                    <textarea 
-                      className="form-control" 
-                      name="message" 
-                      rows="6" 
-                      placeholder="Your Message" 
+                    <textarea
+                      className="form-control"
+                      name="message"
+                      rows="6"
+                      placeholder="Your Message"
                       value={formData.message}
                       onChange={handleChange}
                       required
                     ></textarea>
                   </div>
                   <div className="form-submit">
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       className="btn btn-primary"
                       disabled={isSubmitting}
                     >

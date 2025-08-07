@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@stackoverflow/stacks-icons": "^6.6.1",
     "@tailwindcss/vite": "^4.1.11",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.13.1",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^12.23.12",
     "normalize.css": "^8.0.1",
     "react": "^19.1.0",

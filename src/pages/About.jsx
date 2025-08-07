@@ -1,4 +1,5 @@
 import React from 'react';
+import profile from '../assets/images/Profile.jpg'
 
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
           <div className="row flex justify-center items-center">
             <div className="col-lg-4" data-aos="fade-right">
               <img 
-                src="/profile.jpg" 
+                src={profile} 
                 className="img-fluid border rounded-lg" 
                 alt="Shivansh Sharma" 
               />
