@@ -56,27 +56,27 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="contact-info-item" data-aos="fade-up" data-aos-delay="200">
+                <a href='mailto:sharma.shivansh1305@gmail.com'
+                className="contact-info-item" data-aos="fade-up" data-aos-delay="200">
                   <div className="contact-icon">
                     <FaEnvelope />
                   </div>
-                  <a href='mailto:sharma.shivansh1305@gmail.com' 
-                  className="contact-details">
+                  <div className="contact-details">
                     <h4>Email</h4>
                     <p>sharma.shivansh1305@gmail.com</p>
-                  </a>
-                </div>
+                  </div>
+                </a>
 
-                <div className="contact-info-item" data-aos="fade-up" data-aos-delay="300">
+                <a href='tel:6398799630'
+                 className="contact-info-item" data-aos="fade-up" data-aos-delay="300">
                   <div className="contact-icon">
                     <FaPhone />
                   </div>
-                  <a href='tel:6398799630' 
-                  className="contact-details">
+                  <div className="contact-details">
                     <h4>Phone</h4>
                     <p>(+91) 6398799630</p>
-                  </a>
-                </div>
+                  </div>
+                </a>
 
                 <div className="contact-info-item" data-aos="fade-up" data-aos-delay="400">
                   <div className="contact-icon">
@@ -84,12 +84,12 @@ const Contact = () => {
                   </div>
                   <div className="contact-details">
                     <h4>Social Profiles</h4>
-                    <div className="social-links">
+                    <div className="social-links ">
                       <a href="https://linkedin.com/in/shivansh-sharma-73270724b" target="_blank" rel="noopener noreferrer" className="linkedin">
-                        <FaLinkedin />
+                        <FaLinkedin size={30}/>
                       </a>
                       <a href="https://github.com/Y-Shivansh" target="_blank" rel="noopener noreferrer" className="github">
-                        <FaGithub />
+                        <FaGithub size={30}/>
                       </a>
                     </div>
                   </div>
