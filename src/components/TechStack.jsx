@@ -1,11 +1,12 @@
 import React from 'react';
-import { 
-  SiJavascript, 
+import { FaJava, FaPython } from 'react-icons/fa';
+import {
+  SiJavascript,
   SiTypescript,
-  SiNodedotjs, 
-  SiExpress, 
-  SiReact, 
-  SiMongodb, 
+  SiNodedotjs,
+  SiExpress,
+  SiReact,
+  SiMongodb,
   SiPostgresql,
   SiDocker,
   SiGit,
@@ -18,7 +19,11 @@ import {
   SiGoogle,
   SiTailwindcss,
   SiRazorpay,
-  SiRailway
+  SiRailway,
+  SiCss3,
+  SiHtml5,
+  SiShadcnui,
+  SiFastapi
 } from 'react-icons/si';
 
 const TechStack = () => {
@@ -28,20 +33,27 @@ const TechStack = () => {
       items: [
         { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
         { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+        { name: 'Python', icon: FaPython, color: '#3776AB' },
+        { name: 'Java', icon: FaJava, color: '#EA2D2E' },
       ]
     },
     {
       title: 'Frontend Development',
       items: [
-        { name: 'React.js', icon: SiReact, color: '#61DAFB' },
-        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' }
+        { name: 'React.js', icon: SiReact, color: '#61DAFB' },       // Official React blue
+        { name: 'HTML', icon: SiHtml5, color: '#E34F26' },           // Official HTML5 orange
+        { name: 'CSS', icon: SiCss3, color: '#1572B6' },             // Official CSS3 blue
+        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' }, // Tailwind cyan
+        { name: 'ShadCN UI', icon: SiShadcnui, color: '#000000' },   // ShadCN’s minimal black theme
+
       ]
     },
     {
       title: 'Backend Development',
       items: [
         { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-        { name: 'Express.js', icon: SiExpress, color: '#000000' }
+        { name: 'Express.js', icon: SiExpress, color: '#000000' },
+        { name: 'FastAPI', icon: SiFastapi, color: '#009688' },
       ]
     },
     {
