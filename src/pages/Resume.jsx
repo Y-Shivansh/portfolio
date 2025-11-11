@@ -1,4 +1,5 @@
 import { FaDownload } from 'react-icons/fa';
+import { Experiences } from '../contants/contant';
 
 const Resume = () => {
   const downloadResume = () => {
@@ -26,34 +27,23 @@ const Resume = () => {
           </div>
 
           <div className="timeline">
-            <div className="timeline-item" data-aos="fade-up">
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <h4>Software Development Intern</h4>
-                <h5>August 2025 - Present</h5>
-                <p><em>OrangeCat Technologies</em></p>
-                <ul>
-                  <li>Spearheaded frontend redesign using React and Tailwind CSS v4, improving UI performance and consistency</li>
-                  <li>Created a library of 10+ reusable UI components integrated with OAuth</li>
-                  <li>Collaborated with design team to ensure consistent UI implementation, reducing frontend handoff friction</li>
-                </ul>
+            {Experiences.map((exp, index) => (
+              <div key={index} className="timeline-item">
+                <div className="timeline-marker"></div>
+                <div className="timeline-content">
+                  <h4>{exp.designation}</h4>
+                  <h5>{exp.timeline}</h5>
+                  <p><em>{exp.organisation}</em></p>
+                  <div className=" space-y-2">
+                    {exp.description.map((desc, idx) => (
+                      <p key={idx}>{desc}</p>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <div className="timeline-item" data-aos="fade-up" data-aos-delay="100">
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <h4>Web Development Intern</h4>
-                <h5>June 2025 - August 2025</h5>
-                <p><em>NexisLabs Solutions</em></p>
-                <ul>
-                  <li>Supported feature delivery in an Agile setup using React.js and Node.js, contributing to faster development cycles</li>
-                  <li>Implemented RESTful APIs to streamline data flow</li>
-                  <li>Optimized request handling logic, reducing backend response time by nearly 10%</li>
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
+
         </div>
       </section>
     </>

@@ -1,4 +1,3 @@
-import React from 'react';
 import profile from '../assets/images/Profile.jpg'
 
 const About = () => {
@@ -50,8 +49,8 @@ const About = () => {
               </p>
               <p className='text-gray-500 text-md'>
                 I focus on creating performant, user-friendly applications with expertise across frontend,
-                backend, databases, and third-party integrations —
-                <span className="text-yellow-600">basically everywhere bugs like to hide.</span>
+                backend, databases, and third-party integrations,
+                <span className="text-yellow-600 m-2">basically everywhere bugs like to hide.</span>
               </p>
 
 
