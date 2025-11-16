@@ -121,7 +121,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="contact-form-container" data-aos="fade-up" data-aos-delay="500">
+              <div className="contact-form-container">
                 <h3>Send Message</h3>
 
                 {submitStatus === 'success' && (

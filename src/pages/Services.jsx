@@ -45,7 +45,7 @@ const Services = () => {
   return (
     <>
       <section id='services' className="services section">
-        <div className="container" data-aos="fade-up">
+        <div className="container">
           <div className="section-title">
             <h2>Services</h2>
             <p>My Services</p>
@@ -53,8 +53,8 @@ const Services = () => {
 
           <div className="row mb-3">
             {services.map((service, index) => (
-              <div key={index} className="col-lg-4 col-md-6 d-flex align-items-stretch mb-2" data-aos="zoom-in" data-aos-delay={100 * (index + 1)}>
-                <div className="icon-box mb-2 p-6 bg-gray-800 shadow-md rounded-lg hover:shadow-lg transition">
+              <div key={index} className="c ol-lg-4 col-md-6 d-flex align-items-stretch mb-2">
+                <div className="icon-box mb-2 p-6  shadow-md rounded-lg hover:shadow-lg transition">
                   <div className="icon text-4xl text-blue-500 mb-3">{service.icon}</div>
                   <h4 className="text-lg font-semibold mb-2">{service.title}</h4>
                   <p className="text-gray-600 text-sm">{service.description}</p>
