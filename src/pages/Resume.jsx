@@ -31,9 +31,17 @@ const Resume = () => {
               <div key={index} className="timeline-item">
                 <div className="timeline-marker"></div>
                 <div className="timeline-content">
-                  <h4>{exp.designation}</h4>
-                  <h5>{exp.timeline}</h5>
-                  <p><em>{exp.organisation}</em></p>
+                  <div className="flex items-center gap-4 mb-2">
+                    <img
+                      className="h-10 w-30 rounded-md object-cover/contain"
+                      src={exp.logo}
+                      alt={`${exp.organisation} logo`}
+                    />
+                    <div>
+                      <h4 className="m-0">{exp.designation}</h4>
+                      <p className="text-sm text-white/90 m-0">{exp.organisation} • {exp.timeline}</p>
+                    </div>
+                  </div>
                   <div className=" space-y-2">
                     {exp.description.map((desc, idx) => (
                       <p key={idx}>{desc}</p>
