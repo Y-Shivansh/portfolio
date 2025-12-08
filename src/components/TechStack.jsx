@@ -23,7 +23,8 @@ import {
   SiCss3,
   SiHtml5,
   SiShadcnui,
-  SiFastapi
+  SiFastapi,
+  SiSpringboot
 } from 'react-icons/si';
 
 const TechStack = () => {
@@ -54,6 +55,7 @@ const TechStack = () => {
         { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
         { name: 'Express.js', icon: SiExpress, color: '#000000' },
         { name: 'FastAPI', icon: SiFastapi, color: '#009688' },
+        { name: 'Spring Boot', icon: SiSpringboot, color: '#47A248' },
       ]
     },
     {
